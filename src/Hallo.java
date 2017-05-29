@@ -57,6 +57,15 @@ public class Hallo {
 		return String.format("Das ist post");
 	}
 	
+	@POST
+	@Consumes("application/json")
+	@Produces("text/plain")
+	public String postUser(@Context Request request, String user)
+	{	
+		return "user " + user + "added";
+	}
+	
+	
 	@Path("readUser")
 	@GET
 	@Produces("text/plain")
